@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>Notepad</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>Notepad</h1>
+        <h3>Write, save and delete your notes here!</h3>
+        <input type="text" placeholder="Write something.." id="toDoInput" />
+        <i class="far fa-plus-square" id="add-button"></i>
+      </div>
+      <hr />
+      <div id="list-container">
+        <ul id="main-ul"></ul>
+      </div>
+      <div id="recicleDiv">
+        <i class="far fa-trash-alt" id="recycle"></i>
+      </div>
+    </div>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>
