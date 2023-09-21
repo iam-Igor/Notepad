@@ -31,17 +31,18 @@ const removeButton = document.getElementById("recycle");
 removeButton.addEventListener("click", removeItems);
 
 const tips = document.getElementById("tips");
+const innermain = document.getElementById("innertextes");
 
 tips.addEventListener("click", function () {
   const newH2Tips = document.createElement("div");
   newH2Tips.classList.add("tipsText");
 
   newH2Tips.innerText =
-    "Write something and click on the + button. To mark something as done, simply click on an element in the list. Remove items by clicking on the bottom right X.";
+    "Write something and click on the + button. To mark something as done, simply click on an element in the list. Remove items by clicking on the bottom right X. Click to close the window.";
   newH2Tips.style.fontFamily = "Outfit";
   tips.appendChild(newH2Tips);
-});
 
-tips.addEventListener("dblclick", function () {
-  tips.style.display = "none";
+  newH2Tips.addEventListener("click", function () {
+    location.reload();
+  });
 });

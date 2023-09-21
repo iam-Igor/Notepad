@@ -6,11 +6,12 @@ body {
 }
 
 .tipsText {
-  border: 2px solid;
+  border: 1px solid #bcbcbc;
+  border-radius: 10px;
   background-color: #bcbcbc;
   font-size: 0.9em;
   text-align: center;
-  height: 50px;
+  height: 60px;
 }
 
 .container {
