@@ -22,6 +22,7 @@ h1 {
   margin: 0;
   height: 50px;
   width: 100%;
+  box-shadow: rgb(38, 57, 77) 0px 30px 30px -10px;
 }
 
 h3 {
@@ -30,6 +31,7 @@ h3 {
   width: 100%;
   height: 25px;
 }
+
 h1,
 h3 {
   text-align: center;
@@ -40,12 +42,28 @@ h3 {
 hr {
   width: 300px;
 }
+#tips {
+  position: relative;
+  left: 90px;
+  animation: zoom-in-zoom-out 2s ease infinite;
+}
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.3, 1.3);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
 
 #toDoInput {
   border-radius: 5px;
   border: 1px solid;
   margin-left: 30px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 #recicleDiv {
@@ -60,8 +78,16 @@ hr {
   border-radius: 20px;
   text-align: center;
   background-color: #bb86fc;
-  box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 4px 3px 3px 1px rgb(38, 57, 77);
 }
 #recycle {
   margin-top: 7px;
+}
+
+#recicleDiv:hover {
+  animation: zoom-in-zoom-out 2s ease;
+}
+
+li {
+  width: 70%;
 }
