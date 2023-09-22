@@ -11,17 +11,24 @@ const getInputValue = function () {
     values.forEach((element) => {
       const li = document.createElement("li");
       li.innerText = element.trim();
+      const deleteButton = document.createElement("button");
+
+      deleteButton.innerText = "delete";
+      deleteButton.classList.add("delete-btn");
       mainUl.appendChild(li);
+      li.appendChild(deleteButton);
       input.value = "";
-      li.addEventListener("click", function () {
-        li.style.textDecoration = "line-through";
+      deleteButton.addEventListener("click", function () {
+        li.remove();
       });
     });
   }
 };
 
 const removeItems = function () {
-  mainUl.innerHTML = "";
+  if (confirm("Are you sure you want to delete all notes?")) {
+    mainUl.innerHTML = "";
+  }
 };
 
 const addButton = document.getElementById("add-button");
@@ -46,3 +53,17 @@ tips.addEventListener("click", function () {
     location.reload();
   });
 });
+
+const saveButton = document.getElementById("save");
+
+const downloadFile = () => {
+  const link = document.createElement("a");
+  const content = document.getElementById("main-ul").textContent;
+  const file = new Blob([content], { type: "text/plain" });
+  link.href = URL.createObjectURL(file);
+  link.download = "sample.txt";
+  link.click();
+  URL.revokeObjectURL(link.href);
+};
+
+saveButton.addEventListener("click", downloadFile);
