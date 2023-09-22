@@ -54,6 +54,13 @@ tips.addEventListener("click", function () {
   });
 });
 
+input.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    // Trigger the button element with a click
+    document.getElementById("add-button").click();
+  }
+});
+
 const saveButton = document.getElementById("save");
 
 const downloadFile = () => {
